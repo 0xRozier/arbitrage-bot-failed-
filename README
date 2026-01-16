@@ -21,13 +21,23 @@ Experimental arbitrage bot developed in Rust for the Base blockchain (Ethereum L
 ```
 arbitrage-bot/
 ├── src/
-│   ├── main.rs              # Main entry point
-│   ├── detector.rs          # Opportunity detection
-│   ├── executor.rs          # Trade execution
-│   ├── pool_oracle.rs       # Pool price oracle
-│   └── config/              # Configuration
-├── config.json              # Monitored tokens and pools
-└── Cargo.toml
+│   ├── main.rs              # Main entry point and orchestration
+│   ├── detector.rs          # Arbitrage opportunity detection (2-leg & 3-leg)
+│   ├── executor.rs          # Trade execution logic
+│   ├── pool_oracle.rs       # Pool price and liquidity oracle
+│   ├── pool_discovery.rs    # DEX pool discovery and indexing
+│   ├── flashloan.rs         # Flashloan integration
+│   ├── dual_provider.rs     # Dual RPC provider for redundancy
+│   ├── multicall_helper.rs  # Batch RPC calls optimization
+│   ├── circuit_breaker.rs   # Circuit breaker pattern for error handling
+│   ├── metrics.rs           # Performance and trading metrics
+│   ├── config.rs            # Configuration management
+│   └── types.rs             # Common types and structures
+├── tokens.json              # Token addresses and metadata
+├── Cargo.toml               # Rust dependencies
+└── .env                     # Environment variables (RPC, private key)
++ Smart Contract
+
 ```
 
 ### Technologies Used
