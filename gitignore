@@ -1,0 +1,90 @@
+# Rust
+/target/
+**/*.rs.bk
+*.pdb
+Cargo.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Configuration sensible
+config.local.json
+secrets.json
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Build artifacts
+/build/
+/dist/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Testing
+/coverage/
+.nyc_output/
+
+# Node (si vous ajoutez des scripts JS/TS)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python (si vous utilisez des scripts Python)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Documentation build
+/docs/_build/
+/docs/.doctrees/
+
+# OS specific
+Thumbs.db
+.Spotlight-V100
+.Trashes
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Keys et wallets (IMPORTANT - NE JAMAIS COMMIT)
+*.key
+*.keystore
+*.wallet
+private_key.txt
+mnemonic.txt
+seed.txt
+
+# Transaction history
+transactions.json
+trades.json
+history.json
