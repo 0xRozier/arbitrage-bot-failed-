@@ -1,0 +1,103 @@
+# 🤖 Base Arbitrage Bot (Non-Functional)
+
+[![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> ⚠️ **WARNING**: This bot is **NOT functional** and should **NOT be used in production**. 
+
+## 📖 Description
+
+Experimental arbitrage bot developed in Rust for the Base blockchain (Ethereum L2). The project aimed to detect and execute arbitrage opportunities on decentralized exchanges (Uniswap V3 and Aerodrome).
+
+### Implemented Strategies
+
+1. **Classic Arbitrage (2-leg)**: Detection of price discrepancies between two DEXs for the same token pair
+2. **Triangular Arbitrage (3-leg)**: Exploitation of price inefficiencies across 3-token cycles (e.g., USDC → WETH → DAI → USDC)
+
+
+
+## 🏗️ Architecture
+
+```
+arbitrage-bot/
+├── src/
+│   ├── main.rs              # Main entry point
+│   ├── detector.rs          # Opportunity detection
+│   ├── executor.rs          # Trade execution
+│   ├── pool_oracle.rs       # Pool price oracle
+│   └── config/              # Configuration
+├── config.json              # Monitored tokens and pools
+└── Cargo.toml
+```
+
+### Technologies Used
+
+- **Language**: Rust
+- **Blockchain**: Base (Ethereum L2)
+- **DEX**: Uniswap V3, Aerodrome
+- **RPC**: Web3 Providers
+- **Monitored Tokens**: USDC, WETH, DAI, USDbC, cbBTC, AERO, wstETH, USDT, cbETH, BRETT, DEGEN, TOSHI
+
+
+## 📊 Experimental Results
+
+After several weeks of testing:
+- **Opportunities detected**: ~5-10 per day
+- **Profitable opportunities**: 0
+- **Profit made**: $0
+
+## 🚀 Installation 
+
+```bash
+# Clone the repo
+git clone https://github.com/your-username/base-arbitrage-bot.git
+cd base-arbitrage-bot
+
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Configure environment variables
+cp .env.example .env
+# Edit .env with your RPC_URL and PRIVATE_KEY
+
+# Build the project
+cargo build --release
+
+# Run the bot (dry-run mode recommended)
+cargo run --release
+```
+
+## ⚙️ Configuration
+
+The `config.json` file contains:
+- List of monitored tokens with their priorities
+- Pool parameters (Uniswap fees, minimum liquidity)
+- Filters (minimum liquidity, maximum price impact)
+
+## 📚 Useful Resources
+
+- [Uniswap V3 Documentation](https://docs.uniswap.org/contracts/v3/overview)
+- [Aerodrome Finance](https://aerodrome.finance/)
+- [Base Network](https://base.org/)
+- [Flashbots Documentation](https://docs.flashbots.net/)
+- [MEV Research](https://research.paradigm.xyz/MEV)
+
+## ⚠️ Disclaimers
+
+- This code is provided **"as is"** without warranty of any kind
+- **DO NOT use with real funds**
+- Algorithmic trading carries significant financial risks
+- The author is not responsible for financial losses
+
+## 📜 License
+
+MIT License - see [LICENSE](LICENSE) file
+
+---
+
+## 🙏 Acknowledgments
+Thanks to Claude (Anthropic) for development assistance
+
+---
+
+*Built with 🦀 Rust and many lessons learned*
